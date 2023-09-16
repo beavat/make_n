@@ -4,7 +4,7 @@ import pprint
 OPERATOR = ['+', '-', '*', '/']
 
 def make_n(num_list, ans):
-    ope_list = list(itertools.product(OPERATOR, repeat=3))
+    ope_list = list(itertools.product(OPERATOR, repeat=len(num_list) - 1))
     for v in itertools.permutations(num_list):
         ll = list(v)
         for ope_l in ope_list:
@@ -26,7 +26,7 @@ def make_n(num_list, ans):
                             tmp_fomula2.extend(')')
                             tmp_fomula2.extend(tmp_fomula[j+1:])
                             fomula = ' '.join(tmp_fomula2)
-                            print(f'{fomula}')
+                            # print(f'{fomula}')
                             try:
                                 if eval(fomula) == ans:
                                     print(f'!!!{fomula} = {ans}!!!')
@@ -39,4 +39,7 @@ def make_n(num_list, ans):
 if __name__ == '__main__':
     num_list = ['4', '8', '8', '9']
     ans = 23
-    make_n(num_list, ans)
+
+    
+    print(f'\nMake {ans} with {num_list}')
+    make_n(num_list, int(ans))
