@@ -37,9 +37,16 @@ def make_n(num_list, ans):
             
 
 if __name__ == '__main__':
-    num_list = ['4', '8', '8', '9']
-    ans = 23
+    num_list = []
+    ans = None
+    # num_list = ['2', '3', '4', '4']
+    # ans = 19
 
+    if ans == None:
+        ans = input('Enter Anser values:')
+    if len(num_list) == 0:
+        val = input('Enter values separated by commas: ')
+        num_list = val.split(',')
     
-    print(f'\nMake {ans} with {num_list}')
+    print(f'Make {ans} with {num_list}')
     make_n(num_list, int(ans))
